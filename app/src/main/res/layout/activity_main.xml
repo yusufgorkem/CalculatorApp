@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="calculateViewModel"
+            type="com.theappland.mycalculatorapp.view.viewmodel.CalculateViewModel" />
+    </data>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.MainActivity"
+    android:background="@android:color/black"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/expressionText"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:textColor="@color/actionButton"
+        android:layout_gravity="end"
+        android:ellipsize="start"
+        android:singleLine="true"
+        android:textSize="40sp"
+        android:text="@={calculateViewModel.expressionText}"/>
+
+
+    <TextView
+        android:id="@+id/resultText"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:textColor="@color/white"
+        android:layout_gravity="end"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:textSize="30sp"
+        android:text="@={calculateViewModel.resultText}"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/clearButton"
+                style="@style/ActionButtonStyle"
+                android:text="CLEAR"
+                android:onClick="@{() -> calculateViewModel.clear()}"/>
+
+            <TextView
+                android:id="@+id/divideButton"
+                style="@style/ActionButtonStyle"
+                android:text="/"
+                android:onClick="@{() -> calculateViewModel.evaluateExpression(-5)}"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/sevenButton"
+                style="@style/NumberButtonStyle"
+                android:text="7"
+                android:onClick="@{() -> calculateViewModel.evaluateExpression(7)}"/>
+
+            <TextView
+                android:id="@+id/eightButton"
+                style="@style/NumberButtonStyle"
+                android:text="8"
+                android:onClick="@{() -> calculateViewModel.evaluateExpression(8)}"/>
+
+            <TextView
+                android:id="@+id/nineButton"
+                style="@style/NumberButtonStyle"
+                android:text="9"
+                android:onClick="@{() -> calculateViewModel.evaluateExpression(9)}"/>
+
+            <TextView
+                android:id="@+id/multiplyButton"
+                style="@style/NumberActionButton2"
+                android:text="*"
+                android:onClick="@{() -> calculateViewModel.evaluateExpression(-4)}"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/fourButton"
+                style="@style/NumberButtonStyle"
+                android:text="4"
+                android:onClick="@{() -> calculateViewModel.evaluateExpression(4)}"/>
+
+            <TextView
+                android:id="@+id/fiveButton"
+                style="@style/NumberButtonStyle"
+                android:text="5"
+                android:onClick="@{() -> calculateViewModel.evaluateExpression(5)}"/>
+
+            <TextView
+                android:id="@+id/sixButton"
+                style="@style/NumberButtonStyle"
+                android:text="6"
+                android:onClick="@{() -> calculateViewModel.evaluateExpression(6)}"/>
+
+            <TextView
+                android:id="@+id/minusButton"
+                style="@style/NumberActionButton2"
+                android:text="-"
+                android:onClick="@{() -> calculateViewModel.evaluateExpression(-3)}"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/oneButton"
+                style="@style/NumberButtonStyle"
+                android:text="1"
+                android:onClick="@{() -> calculateViewModel.evaluateExpression(1)}"/>
+
+            <TextView
+                android:id="@+id/twoButton"
+                style="@style/NumberButtonStyle"
+                android:text="2"
+                android:onClick="@{() -> calculateViewModel.evaluateExpression(2)}"/>
+
+            <TextView
+                android:id="@+id/threeButton"
+                style="@style/NumberButtonStyle"
+                android:text="3"
+                android:onClick="@{() -> calculateViewModel.evaluateExpression(3)}"/>
+
+            <TextView
+                android:id="@+id/plusButton"
+                style="@style/NumberActionButton2"
+                android:text="+"
+                android:onClick="@{() -> calculateViewModel.evaluateExpression(-2)}"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/dotButton"
+                style="@style/NumberButtonStyle"
+                android:text="."
+                android:onClick="@{() -> calculateViewModel.evaluateExpression(-1)}"/>
+
+            <TextView
+                android:id="@+id/zeroButton"
+                style="@style/NumberButtonStyle"
+                android:text="0"
+                android:onClick="@{() -> calculateViewModel.evaluateExpression(0)}"/>
+
+            <TextView
+                android:id="@+id/deleteButton"
+                style="@style/NumberButtonStyle"
+                android:text="DEL"
+                android:onClick="@{() -> calculateViewModel.del()}"/>
+
+            <TextView
+                android:id="@+id/equalsButton"
+                style="@style/EqualButtonStyle"
+                android:text="="
+                android:onClick="@{() -> calculateViewModel.equalsClicked()}"/>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>
+</layout>
